@@ -14,5 +14,8 @@ if os.path.isfile(path_json):
 authors = [paper['authors'] for paper in papers]
 authors_list = authors_clustering.get_authors_list(authors)
 authors_rating = authors_clustering.get_authors_ratings(authors, authors_list)
+adjacency_list = authors_clustering.get_adjacency_list(authors, authors_list)
 
-print('\n'.join(authors_list))
+path_adjacency = '/home/maximk/Work/metagenomics/authors_adjacency_matrix.json'
+
+print('\n'.join('%s\t%s' % (key, value) for key, value in authors_rating.items()))
