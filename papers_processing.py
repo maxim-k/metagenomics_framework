@@ -7,6 +7,7 @@ import authors_clustering
 
 path_json = '/home/maximk/Work/metagenomics/metagenomics_papers.json'
 
+papers = []
 if os.path.isfile(path_json):
     papers = json.load(open(path_json, 'r'))
 
