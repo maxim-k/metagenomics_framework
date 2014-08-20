@@ -12,5 +12,6 @@ if os.path.isfile(path_json):
 
 authors = [paper['authors'] for paper in papers]
 authors_list = authors_clustering.get_authors_list(authors)
+authors_rating = authors_clustering.get_authors_ratings(authors, authors_list)
 
 print('\n'.join(authors_list))
