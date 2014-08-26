@@ -7,7 +7,7 @@ def get_keywords_list(authors_dict):
     return keywords_list
 
 
-def get_keywords_rating(keywords_dict, keywords_list):
+def get_keywords_ratings(keywords_dict, keywords_list):
     keywords_rating = dict.fromkeys(keywords_list, 0)
     for paper_keywords in keywords_dict:
         for keyword in paper_keywords:
