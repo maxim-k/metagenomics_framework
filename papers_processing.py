@@ -20,9 +20,10 @@ adjacency_matrix = authors_clustering.get_adjacency_matrix(authors, authors_list
 # path_adjacency = '/home/maximk/Work/metagenomics/authors_adjacency_matrix.json'
 # with open(path_adjacency, 'w') as adjacency_matrix_file:
 #     json.dump(adjacency_matrix, adjacency_matrix_file)
-#
-# print('\n'.join('%s\t%s' % (key, value) for key, value in authors_rating.items()))
 
-keywords = [paper['keywords'] for paper in papers]
+print('\n'.join('%s\t%s' % (key, value) for key, value in authors_rating.items()))
+
+keywords = [paper.get('keywords', '') for paper in papers]
 keywords_list = keywords_processing.get_keywords_list(keywords)
 keywords_rating = keywords_processing.get_keywords_ratings(keywords, keywords_list)
+print('\n'.join('%s\t%s' % (key, value) for key, value in keywords_rating.items()))

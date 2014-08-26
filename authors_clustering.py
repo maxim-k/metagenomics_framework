@@ -2,6 +2,7 @@ __author__ = 'maximk'
 
 from collections import OrderedDict
 
+
 def get_authors_list(authors_dict):
     """
     Get authors from Mendeley JSON; remove duplicates.
@@ -26,6 +27,7 @@ def get_authors_ratings(authors_dict, authors_list):
     authors_rating = OrderedDict(sorted(authors_rating.items(), key=lambda t: t[1], reverse=True))
     return authors_rating
 
+
 def get_adjacency_matrix(authors_dict, authors_list):
     """
     Get weighted adjacency matrix for authors from each paper
@@ -48,8 +50,8 @@ def get_adjacency_matrix(authors_dict, authors_list):
 
 
 def main():
-
     return None
+
 
 if __name__ == '__main__':
     main()
