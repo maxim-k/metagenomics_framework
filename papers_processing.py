@@ -29,8 +29,11 @@ if os.path.isfile(path_json):
 # keywords_rating = keywords_processing.get_keywords_ratings(keywords, keywords_list)
 # print('\n'.join('%s\t%s' % (key, value) for key, value in keywords_rating.items()))
 
-conclusions = open('/home/maximk/Work/metagenomics/abstract_conclusion_phrases.txt', 'r').read().lower().split(sep='\n')
 abstracts = [paper.get('abstract', '') for paper in papers]
 abstracts_list = abstracts_processing.get_abstracts_list(abstracts)
+counts = abstracts_processing.count_pairs(abstracts)
+with open('/home/maximk/Work/metagenomics/triple_counts.tsv', 'w') as pairs_counts:
+    pairs_counts.write('\n'.join(['%s\t%s' % (key, value) for key, value in counts.items()]))
 
+conclusions = open('/home/maximk/Work/metagenomics/abstract_conclusion_phrases.txt', 'r').read().lower().split(sep='\n')
 print(abstracts_processing.get_abstracts_conclusions(abstracts_list, conclusions), len(abstracts_list))
