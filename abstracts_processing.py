@@ -14,6 +14,16 @@ def get_abstracts_list(abstracts_dict):
     return abstracts_list
 
 
+def conclusioning(abstracts_list):
+    conclusions = []
+    for abstract in abstracts_list:
+        abstract = abstract.lower()
+        if 'conclusion' in abstract:
+            abstract = abstract[str.find(abstract, 'conclusion')+len('conclusion'):]
+            conclusions.append(abstract)
+    return conclusions
+
+
 def get_abstracts_conclusions(abstracts_list, keyphrases_list):
     """
     Get keyphrases frequency.
